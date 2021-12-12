@@ -22,7 +22,7 @@ let connection_config = {
 }
  
 
-  connect(connection_config, app)
+  //connect(connection_config, app)
 
  
  
@@ -31,7 +31,7 @@ let connection_config = {
  
  
  
-  exports.app = functions.https.onRequest(app);
+  //exports.app = functions.https.onRequest(app);
 
 //app.use(globalErrorHandler);
 

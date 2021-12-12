@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true, useNewUrlParser: false}))
 
 app.use(Cors(
 {
-  "origin":  "*",
+  "origin":  "https://pawproject-334723.web.app",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "preflightContinue": false,
   "optionsSuccessStatus": 200,
