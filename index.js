@@ -1,4 +1,5 @@
- 
+//const functions = require('firebase-functions');
+
 const Dotenv = require('dotenv');
 
 
@@ -16,12 +17,12 @@ const {connect, disconnect} = dbConnection;
  
 // Connection object which contains the constant for the port and the database
 let connection_config = {
-    port: "7000",
-    database_url:  "mongodb+srv://paw_project:QwcX6WhFHvY88@v@cluster0.am1hb.mongodb.net/interview?retryWrites=true&w=majority"
+    port: process.env.PORT,
+    database_url: process.env.MONGODB_ATLAS
 }
  
 
-  //connect(connection_config, app)
+  connect(connection_config, app)
 
  
  
