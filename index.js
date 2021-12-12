@@ -17,8 +17,8 @@ const {connect, disconnect} = dbConnection;
  
 // Connection object which contains the constant for the port and the database
 let connection_config = {
-    port: process.env.PORT,
-    database_url: process.env.MONGODB_ATLAS
+    port: "7000",
+    database_url:  "mongodb+srv://paw_project:QwcX6WhFHvY88@v@cluster0.am1hb.mongodb.net/interview?retryWrites=true&w=majority"
 }
  
 

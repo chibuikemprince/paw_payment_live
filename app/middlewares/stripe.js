@@ -2,7 +2,7 @@ var storeItems = require("../items");
 var Misc = require("../helpers/misc")
 var Orders = require("../model/orders")
 
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
+const stripe = require("stripe")("sk_test_51K4mR1KZUXT1vXYdNJyK4T0LDN1qO87sDRHV43rg4CK4LbRf07WOzjzPXXCLHHHOpkroXOKDT1Gd6Oro6qEupWvc004m7bOOWY")
 
 
 module.exports =  async (req, res, next) => {
@@ -73,15 +73,15 @@ return;
             product_data: {
 				 
               name: storeItem.name,
-			  images:[`${process.env.CLIENT_URL}/images/laptop.js`]
+			  images:[`https://pawproject-334723.web.app/images/laptop.js`]
             },
             unit_amount: storeItem.priceInCents,
           },
           quantity: item.quantity,
         }
       }),
-      success_url: `${process.env.CLIENT_URL}/success.html?k=${myhash}`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel.html`,
+      success_url: `https://pawproject-334723.web.app/success.html?k=${myhash}`,
+      cancel_url: `https://pawproject-334723.web.app/cancel.html`,
 	  customer_email:email
     })
 	
