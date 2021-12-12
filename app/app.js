@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: true, useNewUrlParser: false}))
  
 //allowing CORS 
 
-app.use(Cors(
+/* app.use(Cors(
 {
   "origin":  "https://pawproject-334723.web.app",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -33,8 +33,25 @@ app.use(Cors(
   "allowedHeaders":"Access-Control-Allow-Headers, Content-Type,Authorization,content-type, X-Requested-With,token"
 }
 
-));
+)); */
  
+ 
+ 
+ app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested, Content-Type, Accept Authorization"
+    )
+    if (req.method === "OPTIONS") {
+      res.header(
+        "Access-Control-Allow-Methods",
+        "POST, PUT, PATCH, GET, DELETE"
+      )
+      return res.status(200).json({})
+    }
+    next()
+  })
   
  var baseMiddleWare =  function(req, res, next){
 	 
